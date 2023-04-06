@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: pink;
+}
+
+.container-fluid {
+    background-color: rgb(16, 5, 76);
+    margin: auto;
+
+}
+
+.card {
+    background-color: rgb(17, 139, 170);
+}
+
+.card img{
+    margin: auto;
+    margin-top: 6px;
+    width: 97%;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: all 0.7s;
+
+}
+
+
+/* Kelimelerin altındaki çizgiyi silmek*/
+a{
+    text-decoration: none;
+}
+.card-title{
+    font-size: 32px;
+    margin: 1px 0;
+    color: black;
+}
+.card-text{
+    font-size: 24;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+/*SİLİNECCEK*/
+.btn{
+    background-color: slateblue;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+
+
+.container-fluid{
+    text-align: center;
+    transition: filter 0.7s;
+    
+}
+
+.active.container-fluid{
+    filter: blur(5px) brightness(.7);
+
+}
+
+.popup-container{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: url("https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: all 0.7s;
+
+}
+
+.active.popup-container{
+    visibility: hidden;
+    opacity: 0;
+    top: 10%
+}
+
+.close-icon{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-icon:hover{
+    color: orangered;
+}
