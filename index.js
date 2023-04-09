@@ -44,43 +44,6 @@ closeIconEl.addEventListener("click", () => {
 
 
 
-// Accessing the projects folder
-const projectsPath = './projects/Blurred Background/';
-//takeText("index.html");
-
-
-function takeText(fileType, fileName) {
-    return fetch("./projects/" + fileName + "/" + fileType)
-        .then(response => response.text())
-        .then(data => {
-
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html");
-            const title = doc.querySelector('title').textContent;
-
-            console.log("Başlık- " + title);
-
-            //console.log("1- " + data);
-
-            // Tüm script tag'larını seçen regular expression
-            const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
-
-            // Tüm script tag'larını içeriklerini silip geri kalan metni birleştiriyoruz
-            const cleanedText = data.replace(scriptRegex, '');
-
-            // Yeni metni yazdırıyoruz
-            //console.log(cleanedText);
-            return cleanedText;
-
-        })
-        .catch(error => {
-            console.error('Error fetching file:', error);
-        });
-}
-
-
-
-
 
 function makeCard(title, text) {
     // 'row' sınıfına sahip elementi seç
@@ -135,20 +98,101 @@ function makeCard(title, text) {
             containerEl.classList.add("active");
             popupContainerEl.classList.remove("active");
 
+            const splitText = event.target.src.split("/");
+            const cardName = splitText[4];
 
-            takeText("index.html", "Blurred Background")
+            takeText("index.html", cardName)
                 .then(cleanedText => {
-                    htmlTab.textContent = cleanedText;
+                    document.getElementById("htmlText").innerText = cleanedText;
                 })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
 
-            cssTab.innerHTML = "takeText);"
-            console.log("Eklendi");
-
+            takeText("style.css", cardName)
+                .then(cleanedText => {
+                    document.getElementById("cssText").innerText = cleanedText;
+                })
+            takeText("index.js", cardName)
+                .then(cleanedText => {
+                    document.getElementById("jsText").innerText = cleanedText;
+                })
         });
     });
-
-
 }
+
+
+function takeText(fileType, fileName) {
+    const baseUrl = "./projects/" + fileName + "/";
+    const fileUrl = baseUrl + fileType;
+
+    return fetch(fileUrl)
+        .then(response => response.text())
+        .then(data => {
+            if (fileType === "html") {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, "text/html");
+                const title = doc.querySelector('title').textContent;
+                console.log("Başlık- " + title);
+            }
+            const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+            const cleanedText = data.replace(scriptRegex, '');
+            //console.log(cleanedText);
+
+            // Check if the file is HTML and if so, extract links to CSS and JavaScript files
+            if (fileType === "html") {
+                const linkRegex = /<link.*?href=["'](.+?\.css)["'].*?>/gi;
+                let match = linkRegex.exec(data);
+                while (match !== null) {
+                    const cssUrl = new URL(match[1], baseUrl).href;
+                    fetch(cssUrl)
+                        .then(response => response.text())
+                        .then(cssData => console.log(cssData))
+                        .catch(error => {
+                            console.error('Error fetching CSS file:', error);
+                        });
+                    match = linkRegex.exec(data);
+                }
+
+                const scriptRegex = /<script\b.*?src=["'](.+?\.js)["'].*?><\/script>/gi;
+                let scriptMatch = scriptRegex.exec(data);
+                while (scriptMatch !== null) {
+                    const scriptUrl = new URL(scriptMatch[1], baseUrl).href;
+                    fetch(scriptUrl)
+                        .then(response => response.text())
+                        .then(jsData => console.log(jsData))
+                        .catch(error => {
+                            console.error('Error fetching JavaScript file:', error);
+                        });
+                    scriptMatch = scriptRegex.exec(data);
+                }
+            }
+            return cleanedText;
+        })
+        .catch(error => {
+            console.error('Error fetching file:', error);
+        });
+}
+
+
+function takeTextt() {
+    const baseUrl = "./projects/";
+
+    return fetch(baseUrl)
+        .then(response => response.text())
+        .then(data => {
+
+
+            console.log(data);
+            return cleanedText;
+        })
+        .catch(error => {
+            console.error('Error fetching file:', error);
+        });
+}
+
+
+// 👇️ default export
+export default function sum(a, b) {
+    console.log(a + b);
+}
+
+// 👇️ named export
+export const num = 100;
