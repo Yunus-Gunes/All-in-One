@@ -1,5 +1,6 @@
 
 
+
 //NAVBAR TIKLANINCA AÇILMASI
 const menuItems = document.querySelectorAll('.nav-item');
 

@@ -7,7 +7,7 @@ const popupContainerEl = document.querySelector(".popup-container");
 const closeIconEl = document.querySelector(".close-icon");
 
 
-const nameProject = [["Blurred background", "yeni"], ["Charater Counter", "yeni2"],
+const nameProject = [["Blurred Background", "yeni"], ["Charater Counter", "yeni2"],
 ["Dark Mode Toggle", "yeni3"], ["Digital Clock", "yeni3"]]
 
 for (var i = 0; i < nameProject.length; i++) {
@@ -16,7 +16,6 @@ for (var i = 0; i < nameProject.length; i++) {
     makeCard(nameProject[i][0], nameProject[i][1]);
 
 }
-console.log("alooooooooo");
 
 /*carda tıklandığında değiştirilcek metinler*/
 var htmlTab = document.getElementById("html");
@@ -172,27 +171,22 @@ function takeText(fileType, fileName) {
 }
 
 
-function takeTextt() {
-    const baseUrl = "./projects/";
-
-    return fetch(baseUrl)
-        .then(response => response.text())
-        .then(data => {
 
 
-            console.log(data);
-            return cleanedText;
-        })
-        .catch(error => {
-            console.error('Error fetching file:', error);
-        });
-}
+//NAVBAR TIKLANINCA AÇILMASI
+const menuItems = document.querySelectorAll('.nav-item');
 
-
-// 👇️ default export
-export default function sum(a, b) {
-    console.log(a + b);
-}
-
-// 👇️ named export
-export const num = 100;
+menuItems.forEach(item => {
+  item.addEventListener('click', function() {
+    console.log('tıklandı')
+    // tıklanan öğeyi etkin hale getir
+    item.classList.add('active');
+    
+    // diğer öğeleri etkinlikten kaldır
+    menuItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('active');
+      }
+    });
+  });
+});
