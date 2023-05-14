@@ -7,8 +7,15 @@ const popupContainerEl = document.querySelector(".popup-container");
 const closeIconEl = document.querySelector(".close-icon");
 
 
-const nameProject = [["Blurred Background", "yeni"], ["Charater Counter", "yeni2"],
-["Dark Mode Toggle", "yeni3"], ["Digital Clock", "yeni3"]]
+const nameProject = [
+["Adam Asmaca", "yeni3"],
+["Blurred Background", "yeni"], ["Charater Counter", "yeni2"],
+["Dark Mode Toggle", "yeni3"], ["Digital Clock", "yeni3"],
+
+["Fire Trail Animation", "yeni3"], ["Image Slider", "yeni3"],
+["Random Photo", "eni3"], ["Sound Kit", "yeni3"],
+
+]
 
 for (var i = 0; i < nameProject.length; i++) {
     var listItem = nameProject[i];

@@ -1,5 +1,4 @@
 
-
 //NAVBAR TIKLANINCA AÇILMASI
 const menuItems = document.querySelectorAll('.nav-item');
 
@@ -17,3 +16,6 @@ menuItems.forEach(item => {
     });
   });
 });
+
+
+
