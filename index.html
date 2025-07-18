@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Portföyü - Küçük Projeler</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <i class="fas fa-code"></i>
+                    Proje Portföyü
+                </h1>
+                <p class="subtitle">Küçük ama etkileyici projeler koleksiyonu</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="projects-grid">
+                <!-- Character Counter Project -->
+                <div class="project-card" data-project="CharaterCounter">
+                    <div class="project-image">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Karakter Sayıcı</h3>
+                        <p class="project-description">
+                            Gerçek zamanlı karakter sayımı yapan interaktif uygulama. 
+                            Metin girerken anında karakter sayısını ve kalan karakter sayısını gösterir.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">HTML</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('CharaterCounter')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                                <!-- Fire Trail Animation Project -->
+                <div class="project-card" data-project="Fire-Trail-Animation">
+                    <div class="project-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ateş İzi Animasyonu</h3>
+                        <p class="project-description">
+                            Canvas kullanarak oluşturulmuş etkileyici ateş izi animasyonu. 
+                            Mouse hareketlerini takip ederek dinamik efektler oluşturur.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Canvas</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Animasyon</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Fire-Trail-Animation')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Adam Asmaca Project -->
+                <div class="project-card" data-project="Adam-Asmaca-Web">
+                    <div class="project-image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Adam Asmaca Oyunu</h3>
+                        <p class="project-description">
+                            Klasik adam asmaca oyunu. SVG grafikleri ile görsel olarak 
+                            adam çizimi ve interaktif harf tahmin sistemi.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">SVG</span>
+                            <span class="tag">Oyun</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Adam-Asmaca-Web')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dark Mode Toggle Project -->
+                <div class="project-card" data-project="Dark-Mode-Toggle">
+                    <div class="project-image">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dark Mode Toggle</h3>
+                        <p class="project-description">
+                            Şık dark mode toggle butonu. CSS animasyonları ile 
+                            smooth geçişler ve modern tasarım.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Toggle</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Dark-Mode-Toggle')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Blurred Background Project -->
+                <div class="project-card" data-project="Blurred-Background">
+                    <div class="project-image">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Blurred Background</h3>
+                        <p class="project-description">
+                            Arka plan bulanıklaştırma efekti ile popup modal. 
+                            Modern web tasarım teknikleri kullanılarak oluşturuldu.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Modal</span>
+                            <span class="tag">Blur</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Blurred-Background')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Slider Project -->
+                <div class="project-card" data-project="Image-Slider">
+                    <div class="project-image">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Image Slider</h3>
+                        <p class="project-description">
+                            Responsive image slider. Otomatik geçişler ve 
+                            manuel navigasyon butonları ile kullanıcı dostu arayüz.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Slider</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Image-Slider')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Random Photo Project -->
+                <div class="project-card" data-project="Random-Photo">
+                    <div class="project-image">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Random Photo Generator</h3>
+                        <p class="project-description">
+                            Rastgele fotoğraf yükleyici. API kullanarak 
+                            dinamik görsel içerik ve "Load More" özelliği.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">API</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Random</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Random-Photo')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sound Kit Project -->
+                <div class="project-card" data-project="Sound-Kit">
+                    <div class="project-image">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sound Kit</h3>
+                        <p class="project-description">
+                            İnteraktif ses kiti. Klavye tuşları ile 
+                            farklı ses efektleri çalabilme özelliği.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Audio</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Keyboard</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('Sound-Kit')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Clock Project -->
+                <div class="project-card" data-project="DigitalClock">
+                    <div class="project-image">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Digital Clock</h3>
+                        <p class="project-description">
+                            Gerçek zamanlı dijital saat. Saat, dakika, saniye 
+                            ve AM/PM göstergesi ile modern tasarım.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Clock</span>
+                        </div>
+                        <button class="view-project-btn" onclick="openProject('DigitalClock')">
+                            <i class="fas fa-external-link-alt"></i>
+                            Projeyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+
+ 
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Proje Portföyü. Tüm projeler açık kaynak kodludur.</p>
+        </footer>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="projectFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
